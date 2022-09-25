@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PVHmM+JUNYIxpePtNoFr3HNbTno7MIXn/YuDsVynROWVktDx5Aum3T1wc7YpAH5mb+GCJgtUPfMqCZvezUS8YQ==",
+  "dgSpecHash": "1sZ3k8aJm5uO0njtRZ3evML9/mQBCqnaJlbGYAI027YGPwjcK+pvQ8mrjwliqEq3RU1h2d+vQKky678DMNmLYA==",
   "success": true,
   "projectFilePath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\mongodb.bson\\2.17.1\\mongodb.bson.2.17.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

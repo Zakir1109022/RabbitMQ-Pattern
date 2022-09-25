@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RabbitMQ_Pattern
+namespace RabbitMQ
 {
     public class Program
     {

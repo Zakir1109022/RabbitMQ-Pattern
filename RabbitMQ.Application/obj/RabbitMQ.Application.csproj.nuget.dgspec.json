@@ -31,6 +31,89 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj": {
+                "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj"
+              },
+              "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\RabbitMQ.Infrastructure.csproj": {
+                "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\RabbitMQ.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj",
+        "projectName": "RabbitMQ.Common",
+        "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.selise.biz/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -43,6 +126,145 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj",
+        "projectName": "RabbitMQ.Core",
+        "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.selise.biz/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj": {
+                "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.17.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\RabbitMQ.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\RabbitMQ.Infrastructure.csproj",
+        "projectName": "RabbitMQ.Infrastructure",
+        "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\RabbitMQ.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.selise.biz/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj": {
+                "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Common\\RabbitMQ.Common.csproj"
+              },
+              "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj": {
+                "projectPath": "G:\\.NET-Core-Practice\\RabbitMQ-Pattern\\RabbitMQ.Core\\RabbitMQ.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.17.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

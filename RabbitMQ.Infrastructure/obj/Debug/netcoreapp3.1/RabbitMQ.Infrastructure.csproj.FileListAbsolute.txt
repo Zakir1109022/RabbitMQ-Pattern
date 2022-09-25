@@ -1,0 +1,14 @@
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.deps.json
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.pdb
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Common.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Core.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Common.pdb
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\bin\Debug\netcoreapp3.1\RabbitMQ.Core.pdb
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.csprojAssemblyReference.cache
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.AssemblyInfoInputs.cache
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.AssemblyInfo.cs
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.csproj.CoreCompileInputs.cache
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.csproj.CopyComplete
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Infrastructure\obj\Debug\netcoreapp3.1\RabbitMQ.Infrastructure.pdb
