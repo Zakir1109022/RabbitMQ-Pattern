@@ -1,5 +1,5 @@
 ﻿using MongoDB.Driver;
-using RabbitMQ.Common;
+using RabbitMQ.Common.Configuration;
 using RabbitMQ.Core;
 using System;
 using System.Collections.Generic;

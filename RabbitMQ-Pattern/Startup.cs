@@ -11,7 +11,11 @@ using Microsoft.OpenApi.Models;
 using RabbitMQ.Application.CommandHandlers;
 using RabbitMQ.Application.Queries;
 using RabbitMQ.Application.Services;
+using RabbitMQ.Client;
+using RabbitMQ.Common.Producer;
+using RabbitMQ.Common.RabbitMQConnection;
 using RabbitMQ.Infrastructure;
+using RabbitMQ.RabbitMQ;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +53,33 @@ namespace RabbitMQ
                 serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
 
             #endregion
+
+            #region RabbitMQ Dependencies
+
+            services.AddSingleton<IRabbitMQConnection>(sp =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
+
+                if (!string.IsNullOrEmpty(Configuration["EventBus:UserName"]))
+                {
+                    factory.UserName = Configuration["EventBus:UserName"];
+                }
+
+                if (!string.IsNullOrEmpty(Configuration["EventBus:Password"]))
+                {
+                    factory.Password = Configuration["EventBus:Password"];
+                }
+
+                return new RabbitMQConnection(factory);
+            });
+
+            services.AddSingleton<EventBusRabbitMQProducer>();
+           // services.AddSingleton<EventBusRabbitMQConsumer>();
+
+            #endregion 
 
 
             //Add Automapper

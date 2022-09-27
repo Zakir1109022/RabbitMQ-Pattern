@@ -1,4 +1,4 @@
-﻿using RabbitMQ.Common;
+﻿using RabbitMQ.Common.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;

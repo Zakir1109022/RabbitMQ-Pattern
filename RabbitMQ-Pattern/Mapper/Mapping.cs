@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using RabbitMQ.Application.Commands;
+using RabbitMQ.Common.Events;
 using RabbitMQ.Core;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace RabbitMQ.Mapper
 {
-    public class OrderMapping : Profile
+    public class Mapping : Profile
     {
-        public OrderMapping()
+        public Mapping()
         {
             CreateMap<Order, CreateOrderCommand>().ReverseMap();
             CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<OrderCheckoutEvent, CreateOrderCommand>().ReverseMap();
         }
     }
 }
