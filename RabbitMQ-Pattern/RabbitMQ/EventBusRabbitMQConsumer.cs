@@ -46,12 +46,12 @@ namespace RabbitMQ.RabbitMQ
             if (e.RoutingKey == EventBusConstants.OrderCheckoutQueue)
             {
                 var message = Encoding.UTF8.GetString(e.Body.Span);
-                var orderCheckoutEvent = JsonConvert.DeserializeObject<OrderCheckoutEvent>(message);
                 Console.WriteLine(message);
 
-                // EXECUTION : Call Internal Checkout Operation
+                // EXECUTION : Call API end point
+                var orderCheckoutEvent = JsonConvert.DeserializeObject<OrderCheckoutEvent>(message);
                 var command = _mapper.Map<SentEmailCommand>(orderCheckoutEvent);
-                var result = await _mediator.Send(command);
+                await _mediator.Send(command);
             }
         }
 

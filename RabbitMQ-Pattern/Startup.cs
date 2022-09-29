@@ -14,6 +14,7 @@ using RabbitMQ.Application.Services;
 using RabbitMQ.Client;
 using RabbitMQ.Common.Producer;
 using RabbitMQ.Common.RabbitMQConnection;
+using RabbitMQ.Extentions;
 using RabbitMQ.Infrastructure;
 using RabbitMQ.RabbitMQ;
 using System;
@@ -77,7 +78,7 @@ namespace RabbitMQ
             });
 
             services.AddSingleton<EventBusRabbitMQProducer>();
-           // services.AddSingleton<EventBusRabbitMQConsumer>();
+            services.AddSingleton<EventBusRabbitMQConsumer>();
 
             #endregion 
 
@@ -123,6 +124,10 @@ namespace RabbitMQ
             {
                 endpoints.MapControllers();
             });
+
+            //Initilize Rabbit Listener in ApplicationBuilderExtentions
+            app.UseRabbitListener();
+
         }
     }
 }
