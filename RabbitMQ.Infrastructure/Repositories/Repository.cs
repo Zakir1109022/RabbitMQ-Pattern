@@ -4,6 +4,7 @@ using RabbitMQ.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Infrastructure
@@ -39,6 +40,11 @@ namespace RabbitMQ.Infrastructure
             var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, id);
             var result = await _collection.Find(filter).SingleOrDefaultAsync();
             return result;
+        }
+
+        public async Task<IEnumerable<TDocument>> FilterBy(Expression<Func<TDocument, bool>> filterExpression)
+        {
+            return await _collection.Find(filterExpression).ToListAsync();
         }
 
 

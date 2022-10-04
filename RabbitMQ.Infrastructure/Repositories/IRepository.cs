@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Infrastructure
@@ -10,6 +11,7 @@ namespace RabbitMQ.Infrastructure
     {
         Task<IEnumerable<TDocument>> GetAll();
         Task<TDocument> GetById(string id);
+        Task<IEnumerable<TDocument>> FilterBy(Expression<Func<TDocument, bool>> filterExpression);
 
         Task Create(TDocument document);
         Task<bool> Update(TDocument document);
