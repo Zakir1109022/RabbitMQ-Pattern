@@ -2,6 +2,8 @@
 using RabbitMQ.Application.Commands;
 using RabbitMQ.Common.Events;
 using RabbitMQ.Core;
+using RabbitMQ.Core.Dtos;
+using RabbitMQ.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,7 @@ namespace RabbitMQ.Mapper
             CreateMap<Order, OrderDto>().ReverseMap();
             CreateMap<OrderCheckoutEvent, CreateOrderCommand>().ReverseMap();
             CreateMap<OrderCheckoutEvent, SentEmailCommand>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
         }
     }
 }
