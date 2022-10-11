@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RabbitMQ.Core.Dtos;
 using System;
@@ -13,9 +14,11 @@ namespace RabbitMQ.Application.Services
    public class AccessTokenService : IAccessTokenService
     {
         private IConfiguration _config;
+        private string _tenantId;
 
-        public AccessTokenService(IConfiguration config)
+        public AccessTokenService(IConfiguration config, IHttpContextAccessor httpContextAccessor)
         {
+            _tenantId = httpContextAccessor.HttpContext.Request.Headers["tenantId"];
             _config = config;
         }
         public string GenerateJSONWebToken(UserDto userInfo)
@@ -30,7 +33,8 @@ namespace RabbitMQ.Application.Services
                     new Claim("Id", userInfo.Id),
                     new Claim(ClaimTypes.Name, userInfo.Id),
                     new Claim(ClaimTypes.Email, userInfo.Email),
-                    new Claim(ClaimTypes.Role, userInfo.Role.ToString())
+                    new Claim(ClaimTypes.Role, userInfo.Role.ToString()),
+                     new Claim("TenantId", _tenantId)
                   }),
                 Expires = DateTime.UtcNow.AddMinutes(tokenValidityInMinutes),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)

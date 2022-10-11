@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +18,7 @@ using RabbitMQ.Common.Producer;
 using RabbitMQ.Common.RabbitMQConnection;
 using RabbitMQ.Extentions;
 using RabbitMQ.Infrastructure;
+using RabbitMQ.Infrastructure.TenantConfig;
 using RabbitMQ.RabbitMQ;
 using System;
 using System.Collections.Generic;
@@ -81,12 +82,15 @@ namespace RabbitMQ
             });
 
 
-            #region Configuration Dependencies
+            #region Tenant Config Dependencies
 
-            services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
+            services.Configure<TenantSettings>(Configuration.GetSection("TenantSettings"));
 
-            services.AddSingleton<IMongoDbSettings>(serviceProvider =>
-                serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
+            services.AddSingleton<ITenantSettings>(serviceProvider =>
+                serviceProvider.GetRequiredService<IOptions<TenantSettings>>().Value);
+
+            services.AddSingleton<IHttpContextAccessor>(serviceProvider =>
+               serviceProvider.GetRequiredService<IOptions<HttpContextAccessor>>().Value);
 
             #endregion
 
