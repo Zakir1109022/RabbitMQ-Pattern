@@ -30,6 +30,7 @@ namespace RabbitMQ.Application.CommandHandlers
             var user = new User
             {
                 Id = Guid.NewGuid().ToString(),
+                Name=request.Name,
                 Email = request.Email,
                 Password = request.Password,
                 Role=request.Role,
