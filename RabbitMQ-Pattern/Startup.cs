@@ -16,9 +16,10 @@ using RabbitMQ.Application.Services;
 using RabbitMQ.Client;
 using RabbitMQ.Common.Producer;
 using RabbitMQ.Common.RabbitMQConnection;
+using RabbitMQ.Common.Services;
+using RabbitMQ.Common.TenantConfig;
 using RabbitMQ.Extentions;
 using RabbitMQ.Infrastructure;
-using RabbitMQ.Infrastructure.TenantConfig;
 using RabbitMQ.RabbitMQ;
 using System;
 using System.Collections.Generic;
@@ -135,6 +136,7 @@ namespace RabbitMQ
             #region Project Dependencies
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ITenantService, TenantService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IAccessTokenService, AccessTokenService>();

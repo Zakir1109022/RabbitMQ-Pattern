@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using RabbitMQ.Common.Configuration;
+using RabbitMQ.Common.Services;
+using RabbitMQ.Common.TenantConfig;
 using RabbitMQ.Core;
-using RabbitMQ.Infrastructure.TenantConfig;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Infrastructure
@@ -16,28 +15,20 @@ namespace RabbitMQ.Infrastructure
         where TDocument : IDocument
     {
         private readonly IMongoCollection<TDocument> _collection;
+        private readonly ITenantService _tenantService;
 
-        public Repository(ITenantSettings tenantSettings, IHttpContextAccessor httpContextAccessor)
+        public Repository(ITenantService tenantService)
         {
-            Tenant currentTenant = GetTenant(httpContextAccessor, tenantSettings);
-
-            var database = new MongoClient(currentTenant.ConnectionString).GetDatabase(currentTenant.TID);
-            _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
+            _tenantService = tenantService ?? throw new ArgumentNullException(nameof(tenantService));
+            Tenant currentTenant = _tenantService.GetTenant();
+            
+            if(currentTenant != null)
+             {
+                var database = new MongoClient(currentTenant.ConnectionString).GetDatabase(currentTenant.TID);
+                _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
+             }
         }
 
-        private Tenant GetTenant(IHttpContextAccessor httpContextAccessor , ITenantSettings tenantSettings)
-        {
-            var tId= httpContextAccessor.HttpContext.Request.Headers["tenantId"];
-            if(string.IsNullOrEmpty(tId))
-            {
-                var identity = httpContextAccessor.HttpContext.User.Identity;
-                tId = (identity as ClaimsIdentity).FindFirst("TenantId").Value.ToString();
-            }
-
-            Tenant currentTenant = tenantSettings.Tenants.Where(a => a.TID == tId.ToString()).FirstOrDefault();
-
-            return currentTenant;
-        }
 
         private protected string GetCollectionName(Type documentType)
         {

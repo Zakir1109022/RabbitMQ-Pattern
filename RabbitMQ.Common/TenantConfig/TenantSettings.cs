@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RabbitMQ.Infrastructure.TenantConfig
+namespace RabbitMQ.Common.TenantConfig
 {
     public class TenantSettings : ITenantSettings
     {
