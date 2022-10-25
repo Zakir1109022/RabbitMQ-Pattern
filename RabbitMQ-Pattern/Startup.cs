@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +16,8 @@ using RabbitMQ.Application.Services;
 using RabbitMQ.Client;
 using RabbitMQ.Common.Producer;
 using RabbitMQ.Common.RabbitMQConnection;
+using RabbitMQ.Common.Services;
+using RabbitMQ.Common.TenantConfig;
 using RabbitMQ.Extentions;
 using RabbitMQ.Infrastructure;
 using RabbitMQ.RabbitMQ;
@@ -81,12 +83,15 @@ namespace RabbitMQ
             });
 
 
-            #region Configuration Dependencies
+            #region Tenant Config Dependencies
 
-            services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
+            services.Configure<TenantSettings>(Configuration.GetSection("TenantSettings"));
 
-            services.AddSingleton<IMongoDbSettings>(serviceProvider =>
-                serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
+            services.AddSingleton<ITenantSettings>(serviceProvider =>
+                serviceProvider.GetRequiredService<IOptions<TenantSettings>>().Value);
+
+            services.AddSingleton<IHttpContextAccessor>(serviceProvider =>
+               serviceProvider.GetRequiredService<IOptions<HttpContextAccessor>>().Value);
 
             #endregion
 
@@ -131,6 +136,7 @@ namespace RabbitMQ
             #region Project Dependencies
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ITenantService, TenantService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IAccessTokenService, AccessTokenService>();

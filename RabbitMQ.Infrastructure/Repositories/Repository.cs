@@ -1,5 +1,7 @@
 ﻿using MongoDB.Driver;
 using RabbitMQ.Common.Configuration;
+using RabbitMQ.Common.Services;
+using RabbitMQ.Common.TenantConfig;
 using RabbitMQ.Core;
 using System;
 using System.Collections.Generic;
@@ -13,12 +15,20 @@ namespace RabbitMQ.Infrastructure
         where TDocument : IDocument
     {
         private readonly IMongoCollection<TDocument> _collection;
+        private readonly ITenantService _tenantService;
 
-        public Repository(IMongoDbSettings settings)
+        public Repository(ITenantService tenantService)
         {
-            var database = new MongoClient(settings.ConnectionString).GetDatabase(settings.DatabaseName);
-            _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
+            _tenantService = tenantService ?? throw new ArgumentNullException(nameof(tenantService));
+            Tenant currentTenant = _tenantService.GetTenant();
+            
+            if(currentTenant != null)
+             {
+                var database = new MongoClient(currentTenant.ConnectionString).GetDatabase(currentTenant.TID);
+                _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
+             }
         }
+
 
         private protected string GetCollectionName(Type documentType)
         {
