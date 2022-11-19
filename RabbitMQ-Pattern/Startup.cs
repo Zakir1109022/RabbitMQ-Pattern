@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -21,6 +23,7 @@ using RabbitMQ.Common.TenantConfig;
 using RabbitMQ.Extentions;
 using RabbitMQ.Infrastructure;
 using RabbitMQ.RabbitMQ;
+using RabbitMQ.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +48,12 @@ namespace RabbitMQ
         {
 
             services.AddControllers();
+
+            services
+                .AddFluentValidationAutoValidation()
+                .AddFluentValidationClientsideAdapters()
+                .AddValidatorsFromAssemblyContaining<ProductValidators>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RabbitMQ_Pattern", Version = "v1" });
