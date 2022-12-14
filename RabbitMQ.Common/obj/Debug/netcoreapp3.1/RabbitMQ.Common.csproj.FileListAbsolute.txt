@@ -1,9 +1,9 @@
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\bin\Debug\netcoreapp3.1\RabbitMQ.Common.deps.json
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\bin\Debug\netcoreapp3.1\RabbitMQ.Common.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\bin\Debug\netcoreapp3.1\RabbitMQ.Common.pdb
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.csprojAssemblyReference.cache
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.AssemblyInfoInputs.cache
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.AssemblyInfo.cs
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.csproj.CoreCompileInputs.cache
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.pdb
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Common\obj\Debug\netcoreapp3.1\RabbitMQ.Common.csprojAssemblyReference.cache

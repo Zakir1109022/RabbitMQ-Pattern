@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RabbitMQ.Application.Services;
 using RabbitMQ.Core;
 using System;
@@ -16,9 +17,11 @@ namespace RabbitMQ.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly ILogger<ProductController> _logger;
+        public ProductController(IProductService productService, ILogger<ProductController> logger)
         {
             _productService = productService;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [Route("[action]")]
@@ -47,6 +50,7 @@ namespace RabbitMQ.Controllers
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> Create(Product product)
         {
+            _logger.LogDebug("Inside AddProduct endpoint");
             if (!ModelState.IsValid)
             {
                 return BadRequest();

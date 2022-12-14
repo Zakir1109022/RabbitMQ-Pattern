@@ -17,11 +17,13 @@ namespace RabbitMQ.Application.CommandHandlers
     {
         private readonly IMapper _mapper;
         private readonly IUserService _userService;
+        private readonly IPasswordHasherService _passwordHasherService;
 
-        public CreateUserdHandler(IMapper mapper, IUserService userService)
+        public CreateUserdHandler(IMapper mapper, IUserService userService, IPasswordHasherService passwordHasherService)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+            _passwordHasherService = passwordHasherService ?? throw new ArgumentNullException(nameof(passwordHasherService));
         }
 
         public async Task<Response<UserDto>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -32,7 +34,7 @@ namespace RabbitMQ.Application.CommandHandlers
                 Id = Guid.NewGuid().ToString(),
                 Name=request.Name,
                 Email = request.Email,
-                Password = request.Password,
+                Password = _passwordHasherService.Hash(request.Password),
                 Role=request.Role,
                 RefreshToken = null,
                 IsActive = true

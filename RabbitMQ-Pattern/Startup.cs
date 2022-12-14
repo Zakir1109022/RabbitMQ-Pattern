@@ -150,6 +150,7 @@ namespace RabbitMQ
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IAccessTokenService, AccessTokenService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPasswordHasherService,PasswordHasherService>();
 
             #endregion
 

@@ -36,8 +36,9 @@ namespace RabbitMQ_Pattern.Controllers
 
 
         [AllowAnonymous]
+        [Consumes("application/x-www-form-urlencoded")]
         [HttpPost("login")]
-        public async Task<ActionResult<TokenResponse>> Login([FromBody] LoginCommand loginInfo)
+        public async Task<ActionResult<TokenResponse>> Login([FromForm] LoginCommand loginInfo)
         {
             var response = await _mediator.Send(loginInfo);
             return response;

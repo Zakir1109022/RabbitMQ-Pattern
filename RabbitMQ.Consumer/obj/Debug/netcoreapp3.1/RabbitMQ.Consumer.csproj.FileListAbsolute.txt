@@ -4,8 +4,14 @@ G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Consumer.runtimeconfig.dev.json
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Consumer.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Consumer.pdb
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Common.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Common.pdb
@@ -17,9 +23,3 @@ G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\obj\Debug\netcoreapp3.1
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\obj\Debug\netcoreapp3.1\RabbitMQ.Consumer.dll
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\obj\Debug\netcoreapp3.1\RabbitMQ.Consumer.pdb
 G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\obj\Debug\netcoreapp3.1\RabbitMQ.Consumer.genruntimeconfig.cache
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-G:\.NET-Core-Practice\RabbitMQ-Pattern\RabbitMQ.Consumer\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
